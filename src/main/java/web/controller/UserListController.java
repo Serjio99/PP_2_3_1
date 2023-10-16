@@ -29,7 +29,7 @@ public class UserListController {
     }
 
     //@RequestMapping("/addNewUsers") // заменил реквесты на гет-мапинг и пост-мапинг
-    @GetMapping("/")
+    @GetMapping("/addNewUsers")
     public String addNewUsers(Model model){
         User user = new User();
         model.addAttribute("user",user);
