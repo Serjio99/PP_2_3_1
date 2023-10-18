@@ -12,7 +12,7 @@ import web.service.UserService;
 import java.util.List;
 
 @Controller
-
+@RequestMapping
 public class UserListController {
     private final UserService userService;
 
@@ -25,15 +25,14 @@ public class UserListController {
     public String allUsers(Model model){
         List<User> userList = userService.getUserList();
         model.addAttribute("allUsr", userList);
-        return "all-user";
+        return "users";
     }
 
     //@RequestMapping("/addNewUsers") // заменил реквесты на гет-мапинг и пост-мапинг
-    @GetMapping("/addNewUsers")
+    @GetMapping ("/addNewUsers")
     public String addNewUsers(Model model){
         User user = new User();
         model.addAttribute("user",user);
-
         return "user-info";
     }
 
@@ -44,7 +43,7 @@ public class UserListController {
         return "redirect:/";
     }
 
-    @PostMapping("/update")
+    @GetMapping("/update")
     public String updateUser(@RequestParam("usrId") Long id, Model model){
         User user  = userService.getUser(id);
         model.addAttribute("user", user);

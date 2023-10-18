@@ -36,9 +36,9 @@ public class UtilConfig {
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/sqltable");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/sys");
         dataSource.setUsername( "root" );
-        dataSource.setPassword( "Rooot321-+" );
+        dataSource.setPassword( "root" );
         return dataSource;
     }
 
